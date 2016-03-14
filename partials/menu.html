@@ -1,0 +1,115 @@
+<style>
+    .navbar.navbar-inverse .form-control {
+        color: #cccccc;
+        background-color: #454545;
+        border-color: #666666;
+    }
+
+    .transparent {
+        color: #cccccc;
+        background-color: #3d3d3d;
+        border-color: #666666;
+    }
+
+    .transparent:hover,
+    .transparent:focus,
+    .transparent:active,
+    .transparent.active {
+        color: #ffffff;
+        background-color: #3d3d3d;
+        border-color: #666666;
+    }
+</style>
+<nav class="navbar navbar-inverse no-border-radius" role="navigation" ng-controller="MainMenuCtrl" ng-init="init();">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand iFeri-logo" href="/"
+               style="background: url('{{ storeSettings.web.logoUrl }}') no-repeat  0 -46px;"></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="/#/">Home</a></li>
+                <li class="dropdown" ng-repeat="tc in categories | filter:{level:2}">
+                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">{{ tc.name }}<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li ng-repeat="sc in categories | filter:{parentId:tc.id}"><a
+                                href="/#/categories/{{ sc.id }}">{{ sc.name }}</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <!-- search form -->
+                <form class="navbar-form-expanded navbar-form navbar-left visible-lg-block visible-md-block visible-xs-block"
+                      role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" data-width="80px" data-width-expanded="170px"
+                               placeholder="Search..." name="query" id="globalSearchInput" ng-enter="doSearch();">
+                        <span class="input-group-btn"><button class="btn  transparent" type="submit"
+                                class="fa fa-search transparent" ng-click="search()">&nbsp;</button></span>
+                    </div>
+                </form>
+                <li class="dropdown-grid visible-sm-block">
+                    <a data-toggle="dropdown" href="javascript:;" class="dropdown-toggle"><i class="fa fa-search"></i>
+                        Search</a>
+                    <div class="dropdown-grid-wrapper" role="menu">
+                        <ul class="dropdown-menu col-sm-6">
+                            <li>
+                                <form class="no-margin">
+                                    <div class="input-group">
+                                        <input id="globalSearchInputMobile" type="text" class="form-control">
+                                        <span class="input-group-btn"><button class="btn btn-default" type="button" ng-click="search();">
+                                            &nbsp;<i class="fa fa-search"></i></button></span>
+                                    </div>
+                                </form>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <a href="/#/cart"><img src="images/cart.svg" width="20" height="20">
+                        <span>Cart</span>
+                        <span type="button" class="btn btn-primary btn-circle btn-xs">{{ cartItemCount }}</span>
+                    </a>
+                </li>
+
+                <!-- account -->
+                <li class="dropdown-grid" ng-if="!loggedIn()">
+                    <a data-toggle="dropdown" href="/#/signup">
+                        <i class="fa fa-tasks"></i>&nbsp;
+                        <span class="hidden-sm">Register</span>
+                    </a>
+                </li>
+
+                <li class="divider"></li>
+                <li class="dropdown-grid" ng-if="!loggedIn()">
+                    <a data-toggle="dropdown" href="/#/login">
+                        <i class="fa fa-tasks"></i>&nbsp;
+                        <span class="hidden-sm">Login</span>
+                    </a>
+                </li>
+
+                <li class="dropdown-grid" ng-if="loggedIn()">
+                    <a data-toggle="dropdown" href="javascript:;" class="dropdown-toggle">
+                        <i class="fa fa-lock"></i>&nbsp;<span class="hidden-sm">{{ userName || 'iFeri User'}}</span>
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/#/myprofile">Profile</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="/#/logout">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

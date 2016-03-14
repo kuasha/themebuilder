@@ -1,0 +1,15 @@
+<div class="container" ng-init="initCarousel();" ng-hide="categoryId">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <uib-carousel interval="carousel.interval" no-wrap="carousel.wrapSlides" ng-show="carousel">
+                <uib-slide ng-repeat="slide in carousel.slides" active="slide.active" index="$index">
+                    <a href="{{ slide.href }}"><img ng-src="{{ slide.image }}"></a>
+                    <!--div class="carousel-caption">
+                        <h4>Slide {{ slide.id }}</h4>
+                        <p>{{ slide.text }}</p>
+                    </div-->
+                </uib-slide>
+            </uib-carousel>
+        </div>
+    </div>
+</div>

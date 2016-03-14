@@ -1,0 +1,50 @@
+<div class="container marginTop30">
+    <div class="row">
+        <div  ng-if="!categoryId" class="col-md-9">
+            <div>
+                <div class="panel" ng-if="categoryHash[category.id].length > 0" ng-init="currentPage=0" ng-repeat="category in categories track by $index">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">
+                            <a href="#/categories/{{ category.id }}" class="thumb">{{ category.name }}</a>
+                        </h3>
+                    </div>
+                    <slick infinite=false speed=300 slides-to-show=4 touch-move=false slides-to-scroll=1
+                           class="slider multiple-items">
+                        <div ng-repeat="product in (categoryHash[category.id]) track by $index">
+                            <a href="#/products/{{ product._id }}">
+                                <img ng-src="http://terrypercale.com{{ product.thumbUrl }}">
+                            </a>
+                        </div>
+                    </slick>
+                </div>
+            </div>
+        </div>
+        <div  ng-if="categoryId" class="col-md-12">
+            <div>
+                <div class="panel">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">
+                            {{ categoryHash[categoryId].name }}
+                        </h3>
+                    </div>
+                    <div>
+                        <div ng-repeat="product in (categoryHash[categoryId]) track by $index">
+                            <a href="#/products/{{ product._id }}">
+                                <img class="thumbnail" ng-src="http://terrypercale.com{{ product.thumbUrl }}">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div ng-if="!categoryId" class="col-md-3" ng-init="initTopProducts()">
+            <div ng-repeat="product in topProducts">
+                <a href="#/products/{{ product._id }}">
+                    <img ng-src="http://terrypercale.com{{ product.thumbUrl }}" style="max-height: 215px; max-width: 215px"
+                        alt="{{ product.title }}"/>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
