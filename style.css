@@ -1,0 +1,211 @@
+body{
+    font-family: "Open Sans" ,sans-serif;
+}
+ul, ol {
+    list-style-type: none;
+}
+a {
+    color: #B3B3B3;
+}
+
+
+
+
+/********************** Menu CSS **********************/
+
+.iFeri-logo{
+    width: 194px;
+    display: block;
+    transition: background 0.5s ease;
+}
+.navbar-fixed-top .iFeri-logo{
+    width: 100px;
+    height: 45px;
+    transition: background 0.5s ease;
+}
+
+.navbar{
+    margin-bottom: 0;
+}
+
+/********************** Menu CSS **********************/
+
+
+/********************** Main  Slider CSS **********************/
+
+#main-slider .owl-controls.clickable {
+    margin-top: 0;
+    position: relative;
+    top: -30px;
+}
+#main-slider .owl-theme .owl-controls .owl-page span{
+
+    margin-top: 0;
+    margin-bottom:0;
+}
+
+/********************** Main  Slider CSS **********************/
+
+
+/********************** Child  Slider CSS **********************/
+
+.child-slider.owl-theme .owl-controls {
+    margin-top: 0;
+    text-align: left;
+
+}
+.child-slider.owl-theme .owl-controls .owl-buttons .owl-prev{
+    top: 50%;
+    left: 0;
+    margin:0;
+    position: absolute;
+    height: 60px;
+    margin-top: -30px;
+}
+.child-slider.owl-theme .owl-controls .owl-buttons .owl-next{
+    top: 50%;
+    right: 0;
+    margin:0;
+    position: absolute;
+    height: 60px;
+    margin-top: -30px;
+}
+.child-slider.owl-theme .owl-controls .owl-buttons div i {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -3px;
+    margin-top: -8px;
+    font-size: 20px;
+}
+
+.child-slider{
+    margin-bottom: 20px;
+}
+.child-slider .item{
+    margin: 3px;
+
+}
+.slider-border-style{
+    border-bottom: 1px solid #CCCCCC;
+    padding-bottom: 15px;
+    border-bottom-style: dotted;
+}
+.child-slider-content{
+    margin-bottom: 25px;
+}
+.child-slider-content h2{
+    font-size: 20px;
+    display: inline;
+    margin:0;
+}
+.child-slider-content a{
+    font-size: 11px;
+    text-decoration: none;
+    margin-left: 10px;
+}
+.child-slider .item img{
+    display: block;
+    width: 100%;
+    height: 150px;
+}
+.child-slider .item a > a{
+    text-align: center;
+    background: #e3e3e3;
+    padding: 3px;
+    border-radius: 3px;
+    display: inline;
+    color: #343434;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    margin-left: -35px;
+
+}
+.child-slider > .owl-theme .owl-controls .owl-buttons div{
+    opacity: 1;
+    background: #e3e3e3;
+}
+.slick-prev:before, .slick-next:before { 
+    color:red !important;
+}
+.slick-slide {
+   margin:5px;
+}
+.product-label{
+    font-size:11px;
+}
+.panel-heading a {
+    font-size: 11px;
+    text-decoration: none;    
+}
+
+
+/********************** Child  Slider CSS **********************/
+
+
+/********************** Hightlight CSS **********************/
+.hightlight-section .content img{
+    display: inline-block;
+}
+.hightlight-section .content{
+    text-align: center;
+    color: #343434;
+    font-size: 15px;
+    display: inline-block;
+    width: 145px;
+    margin-left: 20px;
+}
+.hightlight-section a{display: block;vertical-align: middle;text-align: center}
+
+/********************** Hightlight CSS **********************/
+
+
+
+/********************** Helper CSS **********************/
+
+.marginTop30{margin-top: 30px;}
+.marginTop20{margin-top: 20px;}
+
+/********************** Helper CSS **********************/
+
+
+/********************** advertisement section CSS **********************/
+#advertisement{
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    background: #f8f8f8;
+}
+/********************** advertisement section CSS **********************/
+
+
+
+/********************** Footer CSS **********************/
+
+#footer {
+    background: #F7F7F7;
+    color: #343434;
+    font-size: 12px;
+    font-weight: normal;
+    -webkit-font-smoothing: antialiased;
+    padding-top: 30px;
+    margin-top: 30px;
+}
+
+#footer .links ul {
+    margin-left: auto;
+    padding-left: 0;
+}
+
+#footer .links .link-title {
+    color: #343434;
+    font-size: 14px;
+    margin-bottom: 10px;
+    margin-top: 0;
+
+}
+
+#footer .links li {
+    margin: 10px 0;
+}
