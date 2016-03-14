@@ -44,9 +44,50 @@ storeThemeAppControllers.controller('CategoriesCtrl', ['$scope', '$http', '$q','
         $scope.hashComplete = false;
         $scope.productHash = {};
         $scope.categoryHash = {};
+        $scope.carousel = {};
 
         $scope.categoryId = $routeParams.categoryId;
 
+        $scope.breakpoints = [
+               {
+                   breakpoint: 1024,
+                   settings: {
+                       slidesToShow: 3,
+                       slidesToScroll: 1,
+                       infinite: true,
+                       dots: true,                       
+                       variableWidth: true,
+                       adaptiveHeight: true,
+                       lazyLoad: 'ondemand'
+                   }
+               },
+               {
+                   breakpoint: 600,
+                   settings: {
+                       slidesToShow: 2,
+                       slidesToScroll: 1,
+                       dots: false,
+                       infinite: true,                       
+                       variableWidth: true,
+                       adaptiveHeight: true,
+                       lazyLoad: 'ondemand',
+                       arrows: false
+                   }
+               },
+               {
+                   breakpoint: 480,
+                   settings: {
+                       slidesToShow: 2,
+                       slidesToScroll: 1,
+                       dots: false,
+                       infinite: true,                       
+                       variableWidth: true,
+                       adaptiveHeight: true,
+                       lazyLoad: 'ondemand',
+                       arrows: false
+                   }
+               }
+            ];
         $http.get('data/categories.json').success(function (data) {
             $scope.categories = JSON.parse(data._d);
         });
