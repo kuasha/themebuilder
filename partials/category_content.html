@@ -9,7 +9,7 @@
                             <span class="thumb">{{ category.name }}</span>
                             <a href="#/categories/{{ category.id }}">see more</a>
                         </div>
-                        <slick infinite=true speed=300 slides-to-show=4 touch-move=false slides-to-scroll=1 class="slider multiple-items" adaptive-height=true variable-width="true" autoplay=true mobile-first=true responsive="breakpoints" dots="true" lazyLoad="ondemand">
+                        <slick infinite=true speed=300 slides-to-show=4 touch-move=false slides-to-scroll=1 class="slider multiple-items" adaptive-height=true variable-width="true" autoplay=true mobile-first=true responsive="breakpoints" lazyLoad="ondemand">
                             <div ng-repeat="product in (categoryHash[category.id]) track by $index">
                                 <a href="#/products/{{ product._id }}">
                                     <img ng-src="http://terrypercale.com{{ product.thumbUrl }}">
